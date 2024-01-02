@@ -1,6 +1,6 @@
 import Router from "./routes";
 import ThemeProvider from "./theme";
-import ThemeSettings from "./components";
+import ThemeSettings from "./components/settings";
 
 function App() {
   return (
