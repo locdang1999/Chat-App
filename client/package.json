@@ -19,6 +19,7 @@
     "axios": "^1.6.3",
     "emoji-mart": "^5.5.2",
     "framer-motion": "^10.16.16",
+    "highlight.js": "^11.9.0",
     "phosphor-react": "^1.4.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
