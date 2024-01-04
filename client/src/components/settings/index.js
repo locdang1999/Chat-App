@@ -4,13 +4,17 @@ import ThemeColorPresets from "./ThemeColorPresets";
 import ThemeContrast from "./ThemeContrast";
 import ThemeLocalization from "./ThemeLocalization";
 import ThemeRtlLayout from "./ThemeRtlLayout";
+import SettingsDrawer from "./drawer";
 
 const ThemeSettings = ({ children }) => {
   return (
     <ThemeColorPresets>
       <ThemeContrast>
         <ThemeLocalization>
-          <ThemeRtlLayout>{children}</ThemeRtlLayout>
+          <ThemeRtlLayout>
+            {children}
+            <SettingsDrawer />
+          </ThemeRtlLayout>
         </ThemeLocalization>
       </ThemeContrast>
     </ThemeColorPresets>
