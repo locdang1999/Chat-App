@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const varBgColor = (props) => {
   const colors = props?.colors || ["#19dcea", "#b22cff"];
   const duration = props?.duration || 5;
