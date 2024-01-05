@@ -22,14 +22,14 @@ export default function Router() {
       path: "/",
       element: <DashboardLayout />,
       children: [
-        { element: <Navigate to={DEFAULT_PATH} replace />, index: true },
+        { element: <Navigate to={DEFAULT_PATH} replace={true} />, index: true },
         { path: "app", element: <GeneralApp /> },
 
         { path: "404", element: <Page404 /> },
-        { path: "*", element: <Navigate to="/404" replace /> },
+        { path: "*", element: <Navigate to="/404" replace={true} /> },
       ],
     },
-    { path: "*", element: <Navigate to="/404" replace /> },
+    { path: "*", element: <Navigate to="/404" replace={true} /> },
   ]);
 }
 
