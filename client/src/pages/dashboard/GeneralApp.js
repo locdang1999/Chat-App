@@ -7,7 +7,7 @@ const GeneralApp = () => {
   return (
     <>
       <Suspense fallback="Loading...">
-        <Cat />
+        {/* <Cat /> */}
       </Suspense>
     </>
   );
