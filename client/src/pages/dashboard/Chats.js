@@ -183,22 +183,31 @@ const Chats = () => {
         </Stack>
         {/* Pinned */}
         <Stack
-          spacing={2}
+          // spacing={2}
           direction={"column"}
-          sx={{ flexGrow: 1, overflow: "auto", height: "100%" }}
+          className="stack-chats-scroll"
+          sx={{ flexGrow: 1, overflow: "hidden", height: "100%" }}
         >
           <SimpleBarStyle timeout={500} clickOnTrack={false}>
             {/* Pinned Chats */}
-            <Stack spacing={2.4}>
+            {/* <Stack spacing={2.4}>
               <Typography variant="subtitle2" sx={{ color: "#676767" }}>
                 Pinned
               </Typography>
               {ChatList.filter((el) => el.pinned).map((el, idx) => (
                 <ChatElement {...el} key={idx} />
               ))}
-            </Stack>
+            </Stack> */}
             {/* All Chats */}
             <Stack spacing={2.4}>
+              {/* Pinned Chats */}
+              <Typography variant="subtitle2" sx={{ color: "#676767" }}>
+                Pinned
+              </Typography>
+              {ChatList.filter((el) => el.pinned).map((el, idx) => (
+                <ChatElement {...el} key={idx} />
+              ))}
+              {/* All Chats */}
               <Typography variant="subtitle2" sx={{ color: "#676767" }}>
                 All Chats
               </Typography>

@@ -1,3 +1,5 @@
+import { alpha } from "@mui/material/styles";
+
 const CssBaseline = () => {
   return {
     MuiCssBaseline: {
@@ -36,6 +38,18 @@ const CssBaseline = () => {
         img: {
           display: "block",
           maxWidth: "100%",
+        },
+        ".stack-chats-scroll": {
+          "&:hover": {
+            overflow: "auto",
+          },
+          "&::-webkit-scrollbar": {
+            width: 10,
+          },
+          "&::-webkit-scrollbar-thumb": {
+            borderRadius: 10,
+            backgroundColor: alpha("#637381", 0.48),
+          },
         },
       },
     },
