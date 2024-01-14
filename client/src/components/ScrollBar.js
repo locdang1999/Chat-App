@@ -65,3 +65,5 @@ ScrollBar.propTypes = {
 };
 
 export default ScrollBar;
+
+export { SimpleBarStyle };
