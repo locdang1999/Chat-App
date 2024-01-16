@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack, Box } from "@mui/material";
 import { ChatFooter, ChatHeader } from "../Chat";
+import Message from "./Message";
 
 const Conversation = () => {
   return (
@@ -8,7 +9,9 @@ const Conversation = () => {
       {/* Chat Header */}
       <ChatHeader />
       {/* MSG */}
-      <Box width={"100%"} sx={{ flexGrow: 1 }}></Box>
+      <Box width={"100%"} sx={{ flexGrow: 1 }}>
+        <Message />
+      </Box>
       {/* Chat Footer */}
       <ChatFooter />
     </Stack>
