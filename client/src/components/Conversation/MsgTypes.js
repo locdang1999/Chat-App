@@ -1,6 +1,58 @@
 import React from "react";
-import { Stack, Divider, Typography, Box, Link } from "@mui/material";
+import {
+  Stack,
+  Divider,
+  Typography,
+  Box,
+  Link,
+  IconButton,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { Image, DownloadSimple } from "phosphor-react";
+
+const DocMsg = ({ item }) => {
+  const theme = useTheme();
+
+  return (
+    <Stack direction={"row"} justifyContent={item.incoming ? "start" : "end"}>
+      <Box
+        p={1.5}
+        sx={{
+          backgroundColor: item.incoming
+            ? theme.palette.background.default
+            : theme.palette.primary.main,
+          borderRadius: 1.5, // 1.5 * 8 => 12px
+          width: "max-content",
+        }}
+      >
+        <Stack spacing={2}>
+          <Stack
+            p={2}
+            direction={"row"}
+            spacing={3}
+            alignItems={"center"}
+            sx={{
+              backgroundColor: theme.palette.background.paper,
+              borderRadius: 1,
+            }}
+          >
+            <Image size={48} />
+            <Typography variant="caption">Abstract.png</Typography>
+            <IconButton>
+              <DownloadSimple />
+            </IconButton>
+          </Stack>
+          <Typography
+            variant="body2"
+            sx={{ color: item.incoming ? theme.palette.text : "#FFF" }}
+          >
+            {item.message}
+          </Typography>
+        </Stack>
+      </Box>
+    </Stack>
+  );
+};
 
 const LinkMsg = ({ item }) => {
   const theme = useTheme();
@@ -176,4 +228,4 @@ const Timeline = ({ item }) => {
   );
 };
 
-export { Timeline, TextMsg, MediaMsg, ReplyMsg, LinkMsg };
+export { Timeline, TextMsg, MediaMsg, ReplyMsg, LinkMsg, DocMsg };
