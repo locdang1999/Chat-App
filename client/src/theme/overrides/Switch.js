@@ -1,5 +1,3 @@
-import React from "react";
-
 const Switch = (theme) => {
   const isLight = theme.palette.mode === "light";
 

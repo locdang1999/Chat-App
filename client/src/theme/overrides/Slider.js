@@ -1,5 +1,3 @@
-import React from "react";
-
 const Slider = (theme) => {
   const isLight = theme.palette.mode === "light";
 
