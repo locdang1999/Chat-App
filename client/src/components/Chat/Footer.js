@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   Box,
@@ -65,7 +65,7 @@ const Actions = [
 ];
 
 const ChatInput = ({ openPicker, setOpenPicker }) => {
-  const [openActions, setOpenActions] = React.useState(false);
+  const [openActions, setOpenActions] = useState(false);
 
   return (
     <StyledInput
@@ -101,7 +101,7 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
               ))}
             </Stack>
 
-            <InputAdornment position="end" sx={{marginLeft: "0px"}}>
+            <InputAdornment position="end" sx={{ marginLeft: "0px" }}>
               <IconButton
                 onClick={() => {
                   setOpenActions(!openActions);
@@ -114,7 +114,7 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
         ),
         endAdornment: (
           <Stack sx={{ position: "relative" }}>
-            <InputAdornment position="end" sx={{marginLeft: "0px"}}>
+            <InputAdornment position="end" sx={{ marginLeft: "0px" }}>
               <IconButton
                 onClick={() => {
                   setOpenPicker(!openPicker);
@@ -137,8 +137,8 @@ const Footer = () => {
 
   const [searchParams] = useSearchParams();
 
-  const [openPicker, setOpenPicker] = React.useState(false);
-  
+  const [openPicker, setOpenPicker] = useState(false);
+
   return (
     <Box
       sx={{

@@ -14,30 +14,29 @@ const Message = () => {
   return (
     <Box p={3}>
       <Stack spacing={3}>
-        {Chat_History.map((item) => {
+        {Chat_History.map((item, idx) => {
           switch (item.type) {
             case "divider":
               // Time line
-              return <Timeline item={item} />;
+              return <Timeline item={item} key={idx} />;
             case "msg":
               switch (item.subtype) {
                 case "img":
                   // Img msg
-                  return <MediaMsg item={item} />;
+                  return <MediaMsg item={item} key={idx} />;
                 case "doc":
                   // Doc msg
-                  return <DocMsg item={item} />;
+                  return <DocMsg item={item} key={idx} />;
                 case "link":
                   // Link
-                  return <LinkMsg item={item} />;
+                  return <LinkMsg item={item} key={idx} />;
                 case "reply":
                   // Reply msg
-                  return <ReplyMsg item={item} />;
+                  return <ReplyMsg item={item} key={idx} />;
                 default:
                   // Text msg
-                  return <TextMsg item={item} />;
+                  return <TextMsg item={item} key={idx} />;
               }
-              break;
             default:
               return <></>;
           }
