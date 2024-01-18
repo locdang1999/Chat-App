@@ -1,5 +1,3 @@
-import React from "react";
-
 const Paper = (theme) => {
   return {
     MuiPaper: {

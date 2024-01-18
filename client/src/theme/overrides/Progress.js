@@ -1,8 +1,6 @@
-import React from "react";
-
 const Progress = (theme) => {
   const isLight = theme.palette.mode === "light";
-  
+
   return {
     MuiLinearProgress: {
       styleOverrides: {

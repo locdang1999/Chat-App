@@ -1,5 +1,3 @@
-import React from "react";
-
 const Autocomplete = (theme) => {
   return {
     MuiAutocomplete: {

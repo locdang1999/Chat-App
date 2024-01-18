@@ -138,6 +138,7 @@ const Footer = () => {
   const [searchParams] = useSearchParams();
 
   const [openPicker, setOpenPicker] = React.useState(false);
+  
   return (
     <Box
       sx={{

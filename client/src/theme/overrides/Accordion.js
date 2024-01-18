@@ -1,5 +1,3 @@
-import React from "react";
-
 const Accordion = (theme) => {
   return {
     MuiAccordion: {
