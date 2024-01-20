@@ -3,6 +3,7 @@ import Chats from "./Chats";
 import { Box, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Conversation from "../../components/Conversation";
+import Contact from "../../components/Contact";
 
 const GeneralApp = () => {
   const theme = useTheme();
@@ -23,6 +24,8 @@ const GeneralApp = () => {
         }}
       >
         <Conversation />
+        {/* Contact Information */}
+        <Contact />
       </Box>
     </Stack>
   );
