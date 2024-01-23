@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   Avatar,
   Box,
@@ -16,6 +17,7 @@ import { faker } from "@faker-js/faker";
 import { useTheme } from "@mui/material/styles";
 import useResponsive from "./../../hooks/useResponsive";
 import StyledBadge from "../StyledBadge";
+import { ToggleSidebar } from "../../redux/slices/app";
 
 const Conversation_Menu = [
   {
@@ -36,6 +38,7 @@ const Header = () => {
   const isMobile = useResponsive("between", "md", "xs", "sm");
   const [searchParams, setSearchParams] = useSearchParams();
   const theme = useTheme();
+  const dispatch = useDispatch();
 
   const [conversationMenuAnchorEl, setConversationMenuAnchorEl] =
     useState(null);
@@ -67,8 +70,9 @@ const Header = () => {
       >
         <Stack
           onClick={() => {
-            searchParams.set("open", true);
-            setSearchParams(searchParams);
+            // searchParams.set("open", true);
+            // setSearchParams(searchParams);
+            dispatch(ToggleSidebar());
           }}
           spacing={2}
           direction="row"
