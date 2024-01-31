@@ -5,6 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import Chats from "./Chats";
 import Conversation from "../../components/Conversation";
 import Contact from "../../components/Contact";
+import SharedMessages from "../../components/SharedMessages";
 
 const GeneralApp = () => {
   const theme = useTheme();
@@ -28,7 +29,19 @@ const GeneralApp = () => {
         <Conversation />
       </Box>
       {/* Contact Information */}
-      {sidebar.open && <Contact />}
+      {sidebar.open &&
+        (() => {
+          switch (sidebar.type) {
+            case "CONTACT":
+              return <Contact />;
+            case "STARRED":
+              return <SharedMessages />;
+            case "SHARED":
+              return <SharedMessages />;
+            default:
+              break;
+          }
+        })()}
     </Stack>
   );
 };
