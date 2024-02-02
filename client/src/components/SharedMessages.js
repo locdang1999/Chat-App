@@ -48,9 +48,9 @@ const SharedMessages = () => {
         </Box>
         {/* Tabs */}
         <Tabs sx={{}} value={tab} onChange={handleChangeTab} centered>
-          <Tab label="1" />
-          <Tab label="2" />
-          <Tab label="3" />
+          <Tab label="Media" />
+          <Tab label="Links" />
+          <Tab label="Docs" />
         </Tabs>
         {/* Body */}
         <Stack
