@@ -13,8 +13,8 @@ import { useTheme } from "@mui/material/styles";
 import { CaretLeft } from "phosphor-react";
 import { UpdateSidebarType } from "../redux/slices/app";
 import { faker } from "@faker-js/faker";
-import { Shared_links } from "../data";
-import { LinkMsg } from "./Conversation/MsgTypes";
+import { Shared_docs, Shared_links } from "../data";
+import { DocMsg, LinkMsg } from "./Conversation/MsgTypes";
 
 const SharedMessages = () => {
   const theme = useTheme();
@@ -78,7 +78,7 @@ const SharedMessages = () => {
             overflowY: "auto",
           }}
           p={3}
-          spacing={3}
+          spacing={tab === 1 ? 1 : 3}
         >
           {/* Detail Tabs */}
           {(() => {
@@ -103,7 +103,9 @@ const SharedMessages = () => {
                   return <LinkMsg key={idx} item={itm} />;
                 });
               case 2: // Docs
-                break;
+                return Shared_docs.map((itm, idx) => {
+                  return <DocMsg key={idx} item={itm} />;
+                });
 
               default:
                 break;
