@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Box, Stack, Typography, IconButton, Tabs, Tab } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Typography,
+  IconButton,
+  Tabs,
+  Tab,
+  Grid,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { CaretLeft } from "phosphor-react";
 import { UpdateSidebarType } from "../redux/slices/app";
+import { faker } from "@faker-js/faker";
+import { Shared_links } from "../data";
+import { LinkMsg } from "./Conversation/MsgTypes";
 
 const SharedMessages = () => {
   const theme = useTheme();
-  const dispatch = useDispatch(0);
+  const dispatch = useDispatch();
 
-  const [tab, setTab] = useState();
+  const [tab, setTab] = useState(0);
 
   const handleChangeTab = (e, newVal) => {
     setTab(newVal);
@@ -47,7 +58,12 @@ const SharedMessages = () => {
           </Stack>
         </Box>
         {/* Tabs */}
-        <Tabs sx={{}} value={tab} onChange={handleChangeTab} centered>
+        <Tabs
+          sx={{ px: 2, pt: 2 }}
+          value={tab}
+          onChange={handleChangeTab}
+          centered
+        >
           <Tab label="Media" />
           <Tab label="Links" />
           <Tab label="Docs" />
@@ -64,7 +80,35 @@ const SharedMessages = () => {
           p={3}
           spacing={3}
         >
-          {/* Tabs */}
+          {/* Detail Tabs */}
+          {(() => {
+            switch (tab) {
+              case 0: // Image
+                return (
+                  <Grid container spacing={2}>
+                    {[0, 1, 2, 3, 4, 5, 6].map((itm, idx) => {
+                      return (
+                        <Grid item xs={4} key={idx}>
+                          <img
+                            src={faker.image.avatar()}
+                            alt={faker.name.fullName()}
+                          />
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                );
+              case 1: // Links
+                return Shared_links.map((itm, idx) => {
+                  return <LinkMsg key={idx} item={itm} />;
+                });
+              case 2: // Docs
+                break;
+
+              default:
+                break;
+            }
+          })()}
         </Stack>
       </Stack>
     </Box>
