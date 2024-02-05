@@ -78,7 +78,7 @@ const SharedMessages = () => {
             overflowY: "auto",
           }}
           p={3}
-          spacing={tab === 1 ? 1 : 3}
+          padding={tab === 1 ? 1 : 3}
         >
           {/* Detail Tabs */}
           {(() => {
