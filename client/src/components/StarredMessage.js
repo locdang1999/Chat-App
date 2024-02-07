@@ -4,6 +4,7 @@ import { Box, Stack, Typography, IconButton } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { CaretLeft } from "phosphor-react";
 import { UpdateSidebarType } from "../redux/slices/app";
+import Message from "./Conversation/Message";
 
 const StarredMessage = () => {
   const theme = useTheme();
@@ -54,6 +55,7 @@ const StarredMessage = () => {
           spacing={3}
         >
           {/* Detail Tabs */}
+          <Message />
         </Stack>
       </Stack>
     </Box>
