@@ -10,7 +10,7 @@ const Conversation = () => {
       <ChatHeader />
       {/* MSG */}
       <Box width={"100%"} sx={{ flexGrow: 1, height: "100%", overflowY: "scroll" }} className="stack-chats-scroll">
-        <Message />
+        <Message menu={true}/>
       </Box>
       {/* Chat Footer */}
       <ChatFooter />

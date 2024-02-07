@@ -13,7 +13,7 @@ import { useTheme } from "@mui/material/styles";
 import { Image, DownloadSimple, DotsThreeVertical } from "phosphor-react";
 import { Message_options } from "../../data";
 
-const DocMsg = ({ item }) => {
+const DocMsg = ({ item, menu }) => {
   const theme = useTheme();
 
   return (
@@ -53,12 +53,12 @@ const DocMsg = ({ item }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOptions />
+      {menu && <MessageOptions />}
     </Stack>
   );
 };
 
-const LinkMsg = ({ item }) => {
+const LinkMsg = ({ item, menu }) => {
   const theme = useTheme();
 
   return (
@@ -109,12 +109,12 @@ const LinkMsg = ({ item }) => {
           </Stack>
         </Stack>
       </Box>
-      <MessageOptions />
+      {menu && <MessageOptions />}
     </Stack>
   );
 };
 
-const ReplyMsg = ({ item }) => {
+const ReplyMsg = ({ item, menu }) => {
   const theme = useTheme();
 
   return (
@@ -152,12 +152,12 @@ const ReplyMsg = ({ item }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOptions />
+      {menu && <MessageOptions />}
     </Stack>
   );
 };
 
-const MediaMsg = ({ item }) => {
+const MediaMsg = ({ item, menu }) => {
   const theme = useTheme();
 
   return (
@@ -186,12 +186,12 @@ const MediaMsg = ({ item }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOptions />
+      {menu && <MessageOptions />}
     </Stack>
   );
 };
 
-const TextMsg = ({ item }) => {
+const TextMsg = ({ item, menu }) => {
   const theme = useTheme();
 
   return (
@@ -214,7 +214,7 @@ const TextMsg = ({ item }) => {
         </Typography>
       </Box>
       {/*  */}
-      <MessageOptions />
+      {menu && <MessageOptions />}
     </Stack>
   );
 };
