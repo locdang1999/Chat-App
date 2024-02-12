@@ -20,6 +20,7 @@ import {
   Info,
 } from "phosphor-react";
 import { faker } from "@faker-js/faker";
+import Shortcuts from "../../sections/settings/Shortcuts";
 
 const Settings = () => {
   const theme = useTheme();
@@ -155,6 +156,10 @@ const Settings = () => {
         </Box>
         {/* Right Panel */}
       </Stack>
+      {/* <Shortcuts open={openShortcuts} handleClose={handleCloseShortcuts} /> */}
+      {openShortcuts && (
+        <Shortcuts open={openShortcuts} handleClose={handleCloseShortcuts} />
+      )}
     </>
   );
 };
