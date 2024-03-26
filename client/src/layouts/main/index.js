@@ -1,12 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { Container } from "@mui/material";
 
 const MainLayout = () => {
   return (
     <>
-      <div>Main Layout</div>
+      <Container>
+        <div>Main Layout</div>
 
-      <Outlet />
+        <Outlet />
+      </Container>
     </>
   );
 };
