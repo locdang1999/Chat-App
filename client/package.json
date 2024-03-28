@@ -27,6 +27,7 @@
     "react-dropzone": "^14.2.3",
     "react-embed": "^3.7.0",
     "react-helmet-async": "^2.0.4",
+    "react-hook-form": "^7.51.2",
     "react-i18next": "^14.0.0",
     "react-lazy-load-image-component": "^1.6.0",
     "react-redux": "^9.0.4",
